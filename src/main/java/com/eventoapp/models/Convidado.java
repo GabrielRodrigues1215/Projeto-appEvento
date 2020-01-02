@@ -1,20 +1,16 @@
 package com.eventoapp.models;
 
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
 import org.hibernate.validator.constraints.NotEmpty;
+
 
 @Entity
 public class Convidado {
-	
-	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Long id;
-	
+
+	@Id 
 	@NotEmpty
 	private String rg;
 	
@@ -23,13 +19,6 @@ public class Convidado {
 	
 	@ManyToOne
 	private Evento evento;
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	
 	public String getRg() {
 		return rg;
@@ -49,5 +38,6 @@ public class Convidado {
 	public void setEvento(Evento evento) {
 		this.evento = evento;
 	}
+	
 	
 }
